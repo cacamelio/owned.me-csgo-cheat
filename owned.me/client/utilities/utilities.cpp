@@ -36,7 +36,7 @@ void utilities::Print(const std::string text, ...) {
 	Color clr = g_menu.ConvertColor(config.menu_color);
 
 	// print to console.
-	interfaces::console->ConsoleColorPrintf(ValveColor(clr.r, clr.g, clr.b, 255), XOR("[ owned.me ] "));
+	interfaces::console->ConsoleColorPrintf(ValveColor(clr.r, clr.g, clr.b, 255), XOR("[ sharkhack ] "));
 	interfaces::console->ConsoleColorPrintf(ValveColor(240, 240, 240, 255), buf.append(XOR("\n")).c_str());
 }
 

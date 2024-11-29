@@ -76,5 +76,5 @@ namespace C
 
 	const std::filesystem::path fsPath = GetWorkingPath();
 	inline std::deque<std::string> vecFileNames = { };
-	inline std::string szConfigPath = "owned.me";
+	inline std::string szConfigPath = "sharkhack";
 }

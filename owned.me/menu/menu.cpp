@@ -23,7 +23,7 @@ void Menu::Draw()
 		return;
 
 	ui::SetNextWindowSize(ImVec2(550, 384));
-	ui::Begin("owned.me", 0, ImGuiWindowFlags_NoDecoration); {
+	ui::Begin("sharkhack", 0, ImGuiWindowFlags_NoDecoration); {
 		auto draw = ui::GetWindowDrawList();
 		ImVec2 pos = ui::GetWindowPos();
 		ImVec2 size = ui::GetWindowSize();
@@ -40,7 +40,7 @@ void Menu::Draw()
 		draw->AddRectFilled(ImVec2(pos.x + 12, pos.y + 32), ImVec2(pos.x + 127, pos.y + size.y - 32), ImColor(10 / 255.0f, 10 / 255.0f, 10 / 255.0f, g.Style.Alpha)); // subtabs rect
 		draw->AddRect(ImVec2(pos.x + 12, pos.y + 31), ImVec2(pos.x + 127, pos.y + size.y - 31), ImColor(1.0f, 1.0f, 1.0f, g.Style.Alpha * 0.08f)); // subtabs outline
 
-		draw->AddText(ImVec2(pos.x + 7, pos.y + 5), ImColor(146 / 255.0f, 157 / 255.0f, 223 / 255.0f, g.Style.Alpha), "owned.me");
+		draw->AddText(ImVec2(pos.x + 7, pos.y + 5), ImColor(146 / 255.0f, 157 / 255.0f, 223 / 255.0f, g.Style.Alpha), "sharkhack");
 
 		std::string str(__DATE__);
 		draw->AddText(ImVec2(pos.x + 7, pos.y + size.y - 18), ImColor(1.0f, 1.0f, 1.0f, g.Style.Alpha * 0.4f), str.c_str());
@@ -667,8 +667,6 @@ void Menu::Draw()
 				ui::Keybind("##ej", &config.edgejumpkey, &config.edgejumpkey_style);
 				SetCursorPosX(5);
 				ui::Checkbox("fast stop", &config.faststop);
-				SetCursorPosX(5);
-				ui::Checkbox("ClanTag", &config.clantag);
 			}
 			ui::end_child();
 		}

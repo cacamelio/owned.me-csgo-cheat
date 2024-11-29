@@ -37,7 +37,7 @@ void events::round_start(i_game_event* evt)
 	announcer::bFirstBlood = true;
 	announcer::bSkipEnd = false;
 	announcer::iLocalKills = 0;
-	misc::UpdateClanTag();
+
 	antiaim::freezeCheck = true;
 	fakelag::m_net_pos.clear();
 	//reset legit delay.

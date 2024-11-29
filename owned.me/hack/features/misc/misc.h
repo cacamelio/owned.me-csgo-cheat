@@ -10,7 +10,6 @@ namespace misc
 	void DisableInterpolation();
 	void ThirdPerson();
 	void FakeDuck();
-	void UpdateClanTag();
 
 	inline float tp_distance = 0.0f;
 }

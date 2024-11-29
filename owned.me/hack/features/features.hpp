@@ -1,6 +1,5 @@
 #pragma once
 #include "../../client/utilities/csgo.hpp"
-#include "../../client/interfaces/c_global_vars_base.hpp"
 #include "../menu/variables.h"
 
 #include "legit/legit.h"

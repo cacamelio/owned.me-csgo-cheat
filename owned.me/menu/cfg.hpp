@@ -196,10 +196,6 @@ public:
 
 	bool changemolotov;
 
-	//clantag
-	bool clantag;
-	//clantag
-
 	bool nightmode;
 	bool recoilcross;
 	bool indicators;

@@ -19,18 +19,18 @@ void render::initialize()
 #ifdef _DEBUG
 #else
 	// create directories.
-	std::filesystem::create_directory("C:\\owned.me\\");
-	std::filesystem::create_directory("C:\\owned.me\\resources\\");
-	std::filesystem::create_directory("C:\\owned.me\\audio\\");
-	std::filesystem::create_directory("C:\\owned.me\\audio\\hun\\");
-	std::filesystem::create_directory("C:\\owned.me\\audio\\eng\\");
-	std::filesystem::create_directory("C:\\owned.me\\audio\\custom\\");
+	std::filesystem::create_directory("C:\\shark-hack\\");
+	std::filesystem::create_directory("C:\\shark-hack\\resources\\");
+	std::filesystem::create_directory("C:\\shark-hack\\audio\\");
+	std::filesystem::create_directory("C:\\shark-hack\\audio\\hun\\");
+	std::filesystem::create_directory("C:\\shark-hack\\audio\\eng\\");
+	std::filesystem::create_directory("C:\\shark-hack\\audio\\custom\\");
 
 	// download custom font.
-	URLDownloadToFileA(NULL, FONT, "C:\\owned.me\\resources\\undefeated.ttf", 0, NULL);
-	AddFontResourceA("C:\\owned.me\\resources\\undefeated.ttf");
-	std::filesystem::remove_all("C:\\owned.me\\resources\\");
-	std::filesystem::remove("C:\\owned.me\\resources");
+	URLDownloadToFileA(NULL, FONT, "C:\\shark-hack\\resources\\undefeated.ttf", 0, NULL);
+	AddFontResourceA("C:\\shark-hack\\resources\\undefeated.ttf");
+	std::filesystem::remove_all("C:\\shark-hack\\resources\\");
+	std::filesystem::remove("C:\\shark-hack\\resources");
 #endif
 
 	// setup all fonts.

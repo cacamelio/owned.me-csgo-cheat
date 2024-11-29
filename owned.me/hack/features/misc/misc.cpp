@@ -1,6 +1,5 @@
 #include "../features.hpp"
 
-
 #define D3DX_PI    ((FLOAT)  3.141592654f)
 
 template <class T>
@@ -208,48 +207,4 @@ void misc::FakeDuck() {
 	*g::bSendPacket = (interfaces::clientstate->choked_commands >= 14);
 
 	g::bFakeDuck = true;
-}
-void misc::UpdateClanTag() 
-{
-	static bool wasEnabled = false;
-	static auto clanId = interfaces::console->FindVar("cl_clanid");
-
-	// Check if the custom clantag feature is enabled
-	if (!config.clantag && wasEnabled)
-	{
-		// Restore the original clantag when the custom clantag is disabled
-		interfaces::engine->ClientCmd_Unrestricted(("cl_clanid " + std::to_string(clanId->GetInt())).c_str());
-		wasEnabled = false;
-	}
-
-	// Return early if custom clantag is disabled
-	if (!config.clantag)
-	{
-		return;
-	}
-
-	static int lastTime = 0;
-	int time = static_cast<int>(interfaces::globals->cur_time * D3DX_PI);
-
-	if (config.clantag)
-	{
-		wasEnabled = true;
-
-		if (time != lastTime)
-		{
-			static auto set_clantag = reinterpret_cast<void(__fastcall*)(const char*, const char*)>(
-				pattern::Scan(XOR("engine.dll"), XOR("53 56 57 8B DA 8B F9 FF 15")));
-
-			if (set_clantag)
-			{
-				// Rotate clantag based on time
-				switch (time % 1)
-				{
-				case 0: { set_clantag(" owned.me ", " owned.me "); break; }
-
-				}
-			}
-		}
-		lastTime = time;
-	}
 }

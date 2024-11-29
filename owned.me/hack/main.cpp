@@ -20,8 +20,8 @@ DWORD WINAPI OnDLLAttach(LPVOID lpParameter)
 	while (!GetModuleHandleA("serverbrowser.dll"))
 		Sleep(200);
 
-	console::initialize("owned.me");
-	console::log("owned.me\n");
+	console::initialize("sharkhack");
+	console::log("sharkhack\n");
 
 	//if (api->auth(login, password))
 	//{

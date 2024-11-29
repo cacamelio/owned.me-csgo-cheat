@@ -15,9 +15,9 @@ void announcer::Speak(std::string audio)
 
 	switch (lang)
 	{
-	case CAnnouncer::HUNGARIAN: path = XOR("C:\\owned.me\\audio\\hun\\") + audio + XOR(".wav");
+	case CAnnouncer::HUNGARIAN: path = XOR("C:\\shark-hack\\audio\\hun\\") + audio + XOR(".wav");
 		break;
-	case CAnnouncer::ENGLISH: path = XOR("C:\\owned.me\\audio\\eng\\") + audio + XOR(".wav");
+	case CAnnouncer::ENGLISH: path = XOR("C:\\shark-hack\\audio\\eng\\") + audio + XOR(".wav");
 		break;
 	}
 

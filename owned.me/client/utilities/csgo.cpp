@@ -79,7 +79,7 @@ void client::Watermark()
 		low_alpha = std::max(low_alpha - 7, 0);
 	}
 
-	std::string text = tfm::format(XOR("owned.me %s | %s | rtt: %ims | rate: %i | %s"), build, "dvps", ms, rate, time.str().data());
+	std::string text = tfm::format(XOR("sharkhack %s | %s | rtt: %ims | rate: %i | %s"), build, "dvps", ms, rate, time.str().data());
 	render::FontSize_t size = render::hud.size(text);
 
 	// outline.

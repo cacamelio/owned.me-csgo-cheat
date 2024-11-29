@@ -342,9 +342,6 @@ void ConfigSystem::SetupValues()
 	config.pushitem(&config.weapons.reflectivity_col[2], "weapons", "weapons_reflectivity_col_b", config.weapons.reflectivity_col[2]);
 	config.pushitem(&config.weapons.reflectivity_col[3], "weapons", "weapons_reflectivity_col_a", config.weapons.reflectivity_col[3]);
 
-	//clantag
-	config.pushitem(&config.enable_antiaim, "misc", "ClanTag", config.clantag);
-	//clantag
 
 	config.pushitem(&config.hands.enabled, "hands", "hands_enabled", config.hands.enabled);
 	config.pushitem(&config.hands.pearlescent, "hands", "hands_pearlescent", config.hands.pearlescent);
@@ -436,8 +433,8 @@ void ConfigSystem::pushitem(Color* pointer, std::string category, std::string na
 
 using nlohmann::json;
 void ConfigSystem::read(std::string path) {
-	std::filesystem::create_directory("c:\\owned.me\\");
-	path = "c:\\owned.me\\" + path + ".cfg";
+	std::filesystem::create_directory("c:\\shark-hack\\");
+	path = "c:\\shark-hack\\" + path + ".cfg";
 	if (!file_exists(path)) return;
 
 	json retData;
@@ -477,8 +474,8 @@ void ConfigSystem::read(std::string path) {
 }
 
 void ConfigSystem::save(std::string path) {
-	std::filesystem::create_directory("c:\\owned.me\\");
-	path = "c:\\owned.me\\" + path + ".cfg";
+	std::filesystem::create_directory("c:\\shark-hack\\");
+	path = "c:\\shark-hack\\" + path + ".cfg";
 
 	json retData;
 
@@ -522,9 +519,9 @@ void ConfigSystem::save(std::string path) {
 
 void ConfigSystem::Refresh() {
 	config_files.clear();
-	std::filesystem::create_directory("c:\\owned.me\\");
+	std::filesystem::create_directory("c:\\shark-hack\\");
 
-	for (const auto& p : std::filesystem::recursive_directory_iterator("c:\\owned.me\\")) {
+	for (const auto& p : std::filesystem::recursive_directory_iterator("c:\\shark-hack\\")) {
 		if (!std::filesystem::is_directory(p) &&
 			p.path().extension().string() == ".cfg") {
 			auto file = p.path().filename().string();
@@ -534,8 +531,8 @@ void ConfigSystem::Refresh() {
 }
 
 void ConfigSystem::remove(std::string path) {
-	std::filesystem::create_directory("c:\\owned.me\\");
-	path = "c:\\owned.me\\" + path + ".cfg";
+	std::filesystem::create_directory("c:\\shark-hack\\");
+	path = "c:\\shark-hack\\" + path + ".cfg";
 
 	std::filesystem::remove(path);
 	Refresh();

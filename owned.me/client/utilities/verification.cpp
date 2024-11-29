@@ -20,7 +20,7 @@ bool c_api::auth(std::string username, std::string password) {
 	if (curl)
 	{
 		std::string response;
-		curl_easy_setopt(curl, CURLOPT_URL, security_xor("https://owned.me.ru/api/loader"));
+		curl_easy_setopt(curl, CURLOPT_URL, security_xor("https://shark-hack.ru/api/loader"));
 		curl_easy_setopt(curl, CURLOPT_HEADER, 0);
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
 		curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 10);
